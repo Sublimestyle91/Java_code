@@ -1,0 +1,35 @@
+/* This problem will find the first 50 prime numbers
+ * Then it will place the numbers on 5 lines with
+ * 10 numbers each
+ */
+
+public class PrimeNumberAlgo {
+
+	public static void main(String[] args) {
+		// variables
+		boolean prime;
+		int nmb =2;
+		int test;  
+		String output = "1";	
+		
+		
+		// main loop to find prime
+		for (int count = 0; count < 10; count++) {
+			test = 2;
+			prime = false;
+			while (!prime) {
+				if ( nmb % test == 0 && nmb != test ) {
+					nmb ++; test = 2; continue;
+				}
+				else if (nmb % test == 0 && nmb == test) {
+					prime = true;break;
+				}
+				test++;
+			}
+			output += " " + nmb;
+			nmb++;
+			
+		}
+		System.out.println(output);
+	}
+}
